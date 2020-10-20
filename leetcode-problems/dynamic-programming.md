@@ -55,13 +55,13 @@ for (int i = 1; i < n; ++i) {
 
 ## Q: Check if string contains repetitions
 
-### Solution 1 - Concatenation
+__Solution:__ 1 - Concatenation
 
 ```java
 (S + S).substring(1, length-1).contains(S)
 ```
 
-### Solution 2 - KMP
+__Solution:__ 2 - KMP
 
 ```java
 public boolean repeatedSubstringPattern(String s) {
@@ -112,7 +112,7 @@ public int maxProduct(int[] nums) {
 
 ## Q: Product of array elements without self
 
-### Solution
+__Solution:__
 
 1. Create left and right product arrays
     1. `left[i]` will have products of all the elements to the left, similarly right.
@@ -270,7 +270,7 @@ public List<String> wordBreak(String s, List<String> wordDict) {
 
 ## Q: All confusing (number rotated will have another meaning) numbers till ’N’
 
-### Solution
+__Solution:__
 
 DFS
 
@@ -352,7 +352,7 @@ public int maxCoins(int[] nums) {
 
 ## Q: max “square”
 
-### Solution
+__Solution:__
 
 * If `cur == 1` :=> `dp[cur] = 1 + min(top, left, top left); else 0`.
 * Keep cur max.
@@ -428,7 +428,7 @@ public int maximalRectangle(char[][] matrix) {
 
 ## Q: Max area under histogram (array with bar heights given)
 
-### Solutions
+__Solution:__s
 
 1. Brute force = n^3 (2 loops to find subarray and 3rd one to find min height).
 2. Better brute force = n^2 by merging 2nd and min loop.
@@ -559,7 +559,7 @@ public boolean isNStraightHand(int[] hand, int W) {
 
 ## Q: Next lexicographical permutation
 
-### Solution
+__Solution:__
 
 1. Iterate from left.
 2. Stop at first decreasing element => I.
@@ -619,7 +619,7 @@ public String minWindow(String S, String T) {
 
 ## Q: No. Of subarrays having sum = K
 
-### Solution 1 - n^2, constant space (kinda brute-force)
+__Solution:__ 1 - n^2, constant space (kinda brute-force)
 
 ```java
 public int subarraySum(int[] nums, int k) {
@@ -636,7 +636,7 @@ public int subarraySum(int[] nums, int k) {
 }
 ```
 
-### Solution 2 - O(N), N space
+__Solution:__ 2 - O(N), N space
 
 ```java
 public int subarraySum(int[] nums, int k) {
@@ -655,7 +655,7 @@ public int subarraySum(int[] nums, int k) {
 
 ## Q: Number of delete operations to make 2 strings equal
 
-### Solution 1 - DP with LCS
+__Solution:__ 1 - DP with LCS
 
 ```java
 public int minDistance(String s1, String s2) {
@@ -677,7 +677,7 @@ public int minDistance(String s1, String s2) {
 }
 ```
 
-### Solution 2 - DP without LCS
+__Solution:__ 2 - DP without LCS
 
 ```java
 public int minDistance(String word1, String word2) {
@@ -698,7 +698,7 @@ public int minDistance(String word1, String word2) {
 
 ## Q: Longest palindromic “subsequence”
 
-### Solution : LCS of self and reverse
+__Solution:__ : LCS of self and reverse
 
 ## Q: Longest continuous subarray with “absolute difference” <= limit
 
@@ -728,7 +728,7 @@ public int longestSubarray(int[] nums, int limit) {
 }
 ```
 
-### Solutions 2
+__Solution:__s 2
 
 ```java
 public int longestSubarray(int[] nums, int limit) {

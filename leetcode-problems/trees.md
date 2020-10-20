@@ -2,7 +2,7 @@
 
 ## Q: “max sum of the path in a binary tree”
 
-### Solution
+__Solution:__
 
 1. Keep a global max
 2. Make a recursive function to calculate “max gain” for a node from bottom up.
@@ -20,14 +20,14 @@
 
 ## Q: min sum binary tree path
 
-### Solution
+__Solution:__
 
 1. `dp[i][j] = (first row or first column) ? max(top, left) : min(top, left)`.
 2. Answer = `dp[L][W]`.
 
 ## Q: Construct binary tree from pre-order and in-order given
 
-### Solution
+__Solution:__
 
 1. `Root = preorder[0]`
 2. `Inorder = [ left-inorder, Root, right-inorder ]`
@@ -79,7 +79,7 @@ public TreeNode buildTree(int[] preorder, int[] inorder) {
 
 ## Q: Populate next right pointer in each node
 
-### Solution
+__Solution:__
 
 1. level-order-traversal
 2. Using previously populated “next” pointers (amazing)

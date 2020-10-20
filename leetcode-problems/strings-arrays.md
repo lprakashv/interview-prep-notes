@@ -3,14 +3,14 @@
 ## Sliding window problems
 
 __Sliding sum__
-![](../images/slidingwindow.jpeg)
+![Sliding sum](../images/slidingwindow.jpeg)
 
 __Sliding unique substring__
-![](../images/slidingwindow2.jpeg)
+![Sliding unique substring](../images/slidingwindow2.jpeg)
 
 ### Q: Longest Substring with At Most K Distinct Characters (Hard)
 
-#### My Solution
+__My Solution:__
 
 ```java
 public int lengthOfLongestSubstringKDistinct(String s, int k) {
@@ -46,7 +46,7 @@ public int lengthOfLongestSubstringKDistinct(String s, int k) {
 
 ### Q: Longest Substring Without Repeating Characters
 
-#### My Solution
+__My Solution:__
 
 ```java
 public int lengthOfLongestSubstring(String s) {
@@ -74,7 +74,7 @@ public int lengthOfLongestSubstring(String s) {
 
 ### Q: Subarrays with K different integers
 
-#### Solution
+__Solution:__
 
 > understand the solution!
 
@@ -107,7 +107,7 @@ int atMostK(int[] A, int K) {
 
 ### Q: Max consecutive ones with at most K 0 -> 1 transitions
 
-#### My Solution
+__My Solution:__
 
 ```java
 public int longestOnes(int[] A, int K) {
@@ -134,7 +134,7 @@ public int longestOnes(int[] A, int K) {
 
 ### Q: Remove comments (single line and block) in give source lines
 
-#### Solution
+__Solution:__
 
 ```java
 public List<String> removeComments(String[] source) {
@@ -174,7 +174,7 @@ public List<String> removeComments(String[] source) {
 
 ### Q: Merge 2nd sorted array into first sorted array (big enough with empty values)
 
-#### Solution
+__Solution:__
 
 ```java
 public void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -190,7 +190,7 @@ public void merge(int[] nums1, int m, int[] nums2, int n) {
 
 ### Q: Find an element in a rotated sorted array
 
-#### Solution
+__Solution:__
 
 1. Find the sorted half.
 2. If target lies in the sorted half, binary search into that otherwise BS into other half.
@@ -199,7 +199,7 @@ public void merge(int[] nums1, int m, int[] nums2, int n) {
 
 ### Q: Water/area under bars (only 2 not total water can be trapped)
 
-#### Solution
+__Solution:__
 
 ```java
 public int maxArea(int[] height) {
@@ -217,7 +217,7 @@ public int maxArea(int[] height) {
 
 ### Q: Sum of 3 elements in an array = K {similarly for sum of 2}
 
-#### Solution
+__Solution:__
 
 ```java
 public List<List<Integer>> threeSum(int[] nums) {
@@ -246,7 +246,7 @@ void twoSum(int[] nums, int i, List<List<Integer>> res) {
 
 ### Q: Rotate a String
 
-#### Solution
+__Solution:__
 
 1. __Reverse 0-L__, __reverse 0-K__, __reverse K-L__ (__best__).
 2. __Brute force__: call shift1 (simple prev keeping algo) K times.

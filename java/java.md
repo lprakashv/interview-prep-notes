@@ -104,7 +104,7 @@ To fixing thread interleaving (on a modifiable data):
 * `total time taken = (no. of threads) * (unit work time)` => multithreading advantage is compromised.
 * Independent methods still have to be executed sequentially (as the lock on object is no available while some thread accessing some orthogonal/independent method).
 
-#### Solution
+__Solution:__
 
 **synchronized block** with different locks for each independent code block (use n - different objects to act as locks and pass them to synchronized of each block)
 > Default it is `synchronized(this)`

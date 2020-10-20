@@ -2,7 +2,7 @@
 
 ## Q: Implement insert, remove and getRandom in O(1) - RandomizedSet
 
-### Solution
+__Solution:__
 
 - HashMap and ArrayList
 - ArrayList
@@ -61,7 +61,7 @@ Output: 5
 Explanation: We can get a sum to 17 (1+2+5+9) if the divisor is 1.
 If the divisor is 4 we can get a sum to 7 (1+1+2+3) and if the divisor is 5 the sum will be 5 (1+1+1+2).
 
-### Solution
+__Solution:__
 
 > Binary Search
 
@@ -85,7 +85,7 @@ public int smallestDivisor(int[] A, int threshold) {
 
 ## Q: Decode string
 
-### Solution 1 - recursion
+__Solution:__ 1 - recursion
 
 ```java
 public String decodeString(String s) {
@@ -115,7 +115,7 @@ public String helper(Deque<Character> queue) {
 }
 ```
 
-### Solution 2 - using Stack
+__Solution:__ 2 - using Stack
 
 ```java
 public String decodeString(String s) {
@@ -175,7 +175,7 @@ Example 2:
 >Input: [1,2,3,4,4,5]
 Output: False
 
-### Solution
+__Solution:__
 
 ```java
 public boolean isPossible(int[] nums) {
@@ -212,7 +212,7 @@ Expressions allowed:
 - `(mult e1 e2)`
 - `(let k1 e1 k2 e2 .. kn en expr)`
 
-### My Solution
+__My Solution:__
 
 ```java
 private int evContext(String expression, Map<String, String> context) {
@@ -267,7 +267,7 @@ public int evaluate(String expression) {
 
 ## Q: Median of integer stream
 
-### Solution
+__Solution:__
 
 Heap
 
@@ -317,7 +317,7 @@ class MedianOfIntegerStream {
 
 ## LRU Cache
 
-### Solution
+__Solution:__
 
 1. __Extending LinkedHashMap__
     - `super(capacity, 0.75F, true);`
