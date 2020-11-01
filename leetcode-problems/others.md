@@ -319,14 +319,49 @@ class MedianOfIntegerStream {
 
 __Solution:__
 
-1. __Extending LinkedHashMap__
-    - `super(capacity, 0.75F, true);`
-    - `get(int key);`
-    - `put(int key, int value);`
-    - `@Override protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest);`
-2. __“HashMap + DoublyLinkedList”__
-    - Create a DLLnode with add, remove, popTail methods.
-    - Create a cache map with entry = ( key -> DLLnode ).
-    - Keep a tail and head as DLLnodes.
-    - If size > capacity: tail = popTail; cache.remove(tail.key).
+__Extending LinkedHashMap:__
 
+- `super(capacity, 0.75F, true);`
+- `get(int key);`
+- `put(int key, int value);`
+- `@Override protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest);`
+
+__“HashMap + DoublyLinkedList”:__
+
+- Create a DLLnode with add, remove, popTail methods.
+- Create a cache map with entry = ( key -> DLLnode ).
+- Keep a tail and head as DLLnodes.
+- If size > capacity: tail = popTail; cache.remove(tail.key).
+
+## Q: Min intervals need to be removed to make non-overlapping intervals
+
+__Solution__ - Greedy with sorting
+
+```java
+class MyComparator implements Comparator<int[]> {
+    public int compare(int[] a, int[] b) {
+        return a[1] - b[1];
+    }
+}
+
+public int eraseOverlapIntervals(int[][] intervals) {
+    if (intervals.length == 0) {
+        return 0;
+    }
+
+    Arrays.sort(intervals, new MyComparator());
+    int end = intervals[0][1], prev = 0, count = 0;
+
+    for (int i = 1; i < intervals.length; i++) {
+        if (intervals[prev][1] > intervals[i][0]) {
+            if (intervals[prev][1] > intervals[i][1]) {
+                prev = i;
+            }
+            count++;
+        } else {
+            prev = i;
+        }
+    }
+    return count;
+}
+```

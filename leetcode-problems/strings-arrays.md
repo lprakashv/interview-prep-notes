@@ -251,3 +251,25 @@ __Solution:__
 1. __Reverse 0-L__, __reverse 0-K__, __reverse K-L__ (__best__).
 2. __Brute force__: call shift1 (simple prev keeping algo) K times.
 3. __Cyclic replace__
+
+### Q: Merge overlapping intervals
+
+__Solution:__
+
+```java
+public int[][] merge(int[][] intervals) {
+    LinkedList<int[]> merged = new LinkedList<>();
+
+    Arrays.sort(intervals, (x, y) -> x[0] - y[0]);
+
+    for (int[] interval : intervals) {
+        if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+            merged.add(interval);
+        }
+
+        merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+    }
+
+    return merged.toArray(new int[merged.size()][]);
+}
+```
