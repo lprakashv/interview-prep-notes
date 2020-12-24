@@ -2,7 +2,7 @@
 
 ## Leetcode problems
 
-- [DP](/leetcode-problems/dynamic-programming.md)
+- [DP](leetcode-problems/dynamic-programming.md)
 - [Backtracking](leetcode-problems/backtracking.md)
 - [Trees](leetcode-problems/trees.md)
 - [Strings and Arrays](leetcode-problems/strings-arrays.md)
