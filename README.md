@@ -10,9 +10,9 @@
 
 ## Coding Problem Patterns
 
-- [Backtracking problem patterns](algorithms-tricks/backtracking-patterns.md)
-- [DP problem patterns](algorithms-tricks/dynamic-programming-patterns.md)
-- [Bitwise Operations](algorithms-tricks/bitmasks.md)
+- [Backtracking problem patterns](algorithms/backtracking-patterns.md)
+- [DP problem patterns](algorithms/dynamic-programming-patterns.md)
+- [Bitwise Operations](algorithms/bitmasks.md)
 
 ## Java
 
@@ -20,6 +20,6 @@
 - [Java Multitheading](java/multithreading.md)
 - [Java GC](java/garbage-collection.md)
 - [Java Snippets](java/javasnippets.md)
-- [Bitwise](algorithms-tricks/bitmasks.md)
+- [Bitwise](algorithms/bitmasks.md)
 
 ## Misc
