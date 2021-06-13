@@ -69,7 +69,7 @@ The score of a path is the minimum value in that path.  For example, the value o
 
 A path moves some number of times from one visited cell to any neighbouring unvisited cell in one of the 4 cardinal directions (north, east, west, south).
 
-![Example 1](../images/graphmaxminpath1.jpeg) -- ![Example 2](../images/graphmaxminpath2.jpeg) -- ![Example 3](../images/graphmaxminpath3.jpeg)
+![Example 1](./images/graphmaxminpath1.jpeg) -- ![Example 2](./images/graphmaxminpath2.jpeg) -- ![Example 3](./images/graphmaxminpath3.jpeg)
 
 __Solution 1__ - BFS + PQ
 

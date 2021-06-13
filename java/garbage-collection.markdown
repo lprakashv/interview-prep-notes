@@ -11,7 +11,7 @@ Before Java 8, there was one more memory space — Permanent generation. it cont
 
 > Stack object access is thread-safe while heap access is not!
 
-![GC](../images/gc1.png)
+![GC](./images/gc1.png)
 
 > Why was the decision taken to get rid of Permanent generation?
 
@@ -34,7 +34,7 @@ Garbage collector is a programme that works in JVM and is intended to delete obj
 
 Heap memory is divided into 2 sections called Generations: New generation and Old generation.
 
-![GC](../images/gc.png)
+![GC](./images/gc.png)
 
 New generation includes 3 regions: Eden, Survivor 0, and Survivor 1.
 
@@ -62,10 +62,10 @@ You can configure this for maximum pause time using flag `
 - Instead of dividing heaps into 3 spaces (old) like other Garbage Collectors like CMS (concurrent mark and sweep), Parallel etc, __it divides heap memory in small chunks. These regions are fix-sized (about 2Mb by default)__
 
 Earlier
-![GC](../images/gc3spaces.png)
+![GC](./images/gc3spaces.png)
 
 G1
-![G1GC](../images/g1gc.png)
+![G1GC](./images/g1gc.png)
 
 - Splitting into small regions helps G1 concurrently run and finish it off very quickly.
 - While running GC on Eden space all the survived objects get copied to unassigned space. *The unassigned space becomes survivor space*.
@@ -140,7 +140,7 @@ Here are the size groups of heap regions:
 - Medium(32MB)
 - Large(N * 2 MB)
 
-![ZGC](../images/zgc.png)
+![ZGC](./images/zgc.png)
 
 Notes:
 
@@ -152,7 +152,7 @@ Notes:
 
 #### Phases of Z Garbage Collection
 
-![ZGC](../images/zgcphases.jpeg)
+![ZGC](./images/zgcphases.jpeg)
 
 __1. Pause Mark Start:__
 
@@ -181,7 +181,7 @@ __Pause Relocate Start:__
 - It doesn’t support x32 or 32 bits operating systems.
 - __Load Barrier__ uses this to detect whether the object is bad color then do the corresponding action (like remap means object is remapped to a different address). __It is injected by the JIT compiler when the object is fetched from the heap__.
 
-![ZGC](../images/zgccoloredpointers.png)
+![ZGC](./images/zgccoloredpointers.png)
 
 the 64-bit object reference is divided as follows:
 

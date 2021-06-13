@@ -3,10 +3,10 @@
 ## Sliding window problems
 
 __Sliding sum__
-![Sliding sum](../images/slidingwindow.jpeg)
+![Sliding sum](./images/slidingwindow.jpeg)
 
 __Sliding unique substring__
-![Sliding unique substring](../images/slidingwindow2.jpeg)
+![Sliding unique substring](./images/slidingwindow2.jpeg)
 
 ### Q: Longest Substring with At Most K Distinct Characters (Hard)
 

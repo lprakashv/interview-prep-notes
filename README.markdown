@@ -1,4 +1,6 @@
-# Personal Notes Repo
+# Lalit's Personal Notes
+
+Contains course learnings, coding interview problems, daily learnings etc.
 
 ## Leetcode problems
 
