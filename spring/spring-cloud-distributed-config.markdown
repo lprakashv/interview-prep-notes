@@ -60,6 +60,8 @@ classpath:file.properties
 
 ### Using Spring Cloud Config Server
 
+pom.xml
+
 ```xml
 <dependencyManagement>
   <dependencies>
@@ -162,3 +164,134 @@ public class Application {
 
 ## Spring Cloud Config: Config Client
 
+### Spring Config Client
+
+pom.xml
+
+```xml
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-config-client</artifactId>
+</dependency>
+```
+
+#### Config First
+
+Specify the location of the config server.
+
+**bootstrap.properties**:
+
+```properties
+spring.application.name=<your_application_name>
+spring.cloud.config.discovery.enabled=true
+```
+
+**bootstrap.yml**:
+
+```yml
+spring:
+  application:
+    name: <your_application_name>
+  cloud:
+    config:
+      discovery:
+        enabled: true
+```
+
+#### Discovery First
+
+Discover the location of the config server.
+
+**bootstrap.properties**:
+
+```properties
+spring.application.name=<your_application_name>
+spring.cloud.config.uri=http://localhost:8888/
+```
+
+**bootstrap.yml**:
+
+```yml
+spring:
+  application:
+    name: <your_application_name>
+  cloud:
+    config:
+      uri: http://localhost:8888/
+```
+
+**NOTE:** Don't forget to add eureka client dependencies, service-url configuration and `@EnableDiscoveryClient`
+
+### Refreshing configuration properties
+
+#### \#1: Configuration changes
+
+- Edit and save configuration file(s).
+- Commit and/or push changes to a VCS.
+
+#### \#2: Notify Application(s) to refresh configuration
+
+- **`/refresh`** with **`spring-boot-actuator`**.
+  - Explicit refresh.
+- **`/bus/refresh`** with **`spring-cloud-bus`**.
+  - Dynamic push refresh.
+  - Automatic via Spring Cloud Bus broadcasting.
+  - From RabbitMQ or Kafka?
+- VCS + `/monitor` with **`spring-cloud-config-monitor`** and **`spring-cloud-bus`**.
+  - Automatic and Smart refresh.
+  - Via post commit hooks, Spring Cloud Config Monitor and Spring Cloud Config Bus broadcasting.
+
+### Refreshing Config: What's covered and what's not
+
+- [x] **`@ConfigurationProperties`**
+- [x] All logging levels defined by **`logging.level.*`** are updated.
+- [ ] Any **`@Bean`** or **`@Value`** that only gets its configuration upon initialization.
+
+#### `@RefreshScope`
+
+To refresh a `@Bean` or a `@Value` that only gets its configuration upon initialization.
+
+```java
+@Configuration
+public class SomeConfiguration {
+  @Bean
+  @RefreshScope
+  public FooService fooService(FooProperties properties) {
+    return new FooService(properties.getConfigValue());
+  }
+}
+```
+
+### Additional Features Supported
+
+- Encrypted configuration at rest and/or in-flight.
+- An `/encrypt` endpoint to encrypt configuration.
+- A `/decrypt` endpoint to decrypt configuration.
+- Encrypting and decrypting with symmetric or asymmetric keys.
+
+#### What does encrypted configuration look like?
+
+application.properties
+
+```properties
+my.datasource.username=foobar
+my.datasource.password={cypher}AASFDSFJSRFAFESECCSE
+```
+
+application.yml
+
+```yml
+my:
+  datasource:
+    usernmae: foobar
+    password: '{cipher}AASFDSFJSRFAFESECCSE'
+```
+
+#### At what point the configuration is decrypted?
+
+- Upon request at the server (default).
+- Locally at the client on response.
+
+Configure the Config Server with: `spring.cloud.config.server.encrypt.enabled=false`
+
+TODO: encryption and decryption setup with examples.
